@@ -59,10 +59,37 @@
             position: absolute;
             top: 20px;
             right: 20px;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
+            width: 50px;
+            height: 25px;
+            background-color: #ddd;
+            border-radius: 25px;
+            padding: 5px;
+            transition: all 0.3s ease;
             cursor: pointer;
+        }
+
+        .theme-toggle::before {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: white;
+            transition: all 0.3s ease;
+        }
+
+        body.dark-theme .theme-toggle {
+            background-color: #555;
+        }
+
+        body.dark-theme .theme-toggle::before {
+            transform: translateX(25px);
+        }
+
+        .maintenance-gif {
+            width: 200px;
+            height: 200px;
+            margin-bottom: 2rem;
         }
 
         @media (max-width: 600px) {
@@ -73,12 +100,18 @@
             p {
                 font-size: 1rem;
             }
+
+            .maintenance-gif {
+                width: 150px;
+                height: 150px;
+            }
         }
     </style>
 </head>
 <body>
-    <button class="theme-toggle" id="themeToggle">🌓</button>
+    <div class="theme-toggle" id="themeToggle"></div>
     <div class="container">
+        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNjM2ODJhMzE1MzEwZDFiMzEzYzFjYjI5NGFiZGNiZmQ5MzBjNzhjNyZjdD1n/3o7525tgDm7dmr4zF6/giphy.gif" alt="Maintenance" class="maintenance-gif">
         <h1>Under Maintenance</h1>
         <p>We're working hard to improve our website and we'll be ready soon. Thank you for your patience!</p>
     </div>
@@ -92,3 +125,4 @@
     </script>
 </body>
 </html>
+
